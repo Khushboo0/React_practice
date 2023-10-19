@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import { TopNav } from './myComps/TopNav';
+import { ToDoContainer } from './myComps/ToDoContainer';
 
 function App() {
+  const onDel = (arr)=>{
+    console.log('Delete button clicked!!',arr);
+  };
+  let todoArr=[{
+    sno:1,
+    title: 'list1',
+    desc: 'desc 1'
+  },{
+    sno:2,
+    title: 'list2',
+    desc: 'desc 2'
+  },{
+    sno:3,
+    title: 'list3',
+    desc: 'desc 3'
+  }]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+    <TopNav title='test' searchBar={true}/>
+    <ToDoContainer todoarr={todoArr} onDel={onDel}/>
+    </>
   );
 }
 
