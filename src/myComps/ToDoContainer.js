@@ -6,9 +6,10 @@ export const ToDoContainer = (props) => {
     <div className="container">
       <h2 className="text-center">List container</h2>
       <br />
-      {props.todoarr.map((item) => {
+      {props.todoarr.length?
+      props.todoarr.map((item) => {
         return <ToDoItrm arr={item} key={item.sno} onDel={props.onDel}/>;
-      })}
+      }):'No items available'}
     </div>
   );
 };
