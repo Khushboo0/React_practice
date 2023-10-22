@@ -4,6 +4,7 @@ import { TopNav } from "./myComps/TopNav";
 import { ToDoContainer } from "./myComps/ToDoContainer";
 import React, { useState } from 'react';
 import { Footer } from "./myComps/Footer";
+import { AddTodoItem } from "./myComps/AddTodoItem";
 
 function App() {
   const onDel = (arr) => {
@@ -14,6 +15,15 @@ function App() {
 
     //using splice method from js will not work here
   };
+  const addTodoItem =(title,desc)=>{
+    let sno = todoArr.length+1;
+    const localItem={
+      sno:sno,
+      title:title,
+      desc:desc
+    }
+    setTodoArr([...todoArr,localItem]);
+  }
   const [todoArr, setTodoArr] = useState([
     {
       sno: 1,
@@ -34,6 +44,7 @@ function App() {
   return (
     <>
       <TopNav title="test" searchBar={true} />
+      <AddTodoItem addTodoItem={addTodoItem}/>
       <ToDoContainer todoarr={todoArr} onDel={onDel} />
       <Footer/>
     </>

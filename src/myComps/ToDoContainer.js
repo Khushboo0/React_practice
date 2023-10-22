@@ -3,7 +3,7 @@ import { ToDoItrm } from "./ToDoItrm";
 
 export const ToDoContainer = (props) => {
   return (
-    <div className="container">
+    <div className="container pb-5 mb-5">
       <h2 className="text-center">List container</h2>
       <br />
       {props.todoarr.length?

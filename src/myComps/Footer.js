@@ -2,9 +2,10 @@ import React from "react";
 
 export const Footer = () => {
   let footerStyle = {
-    position: "absolute",
+    position: "fixed",
     width: "100%",
-    bottom: "0px",
+    
+    bottom:'0',
   };
   return (
     <div className="bg-dark text-light py-3" style={footerStyle}>
