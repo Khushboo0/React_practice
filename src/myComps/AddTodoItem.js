@@ -11,6 +11,8 @@ export const AddTodoItem = ({addTodoItem}) => {
         else{
             addTodoItem(title,desc)
         }
+        setTitle('');
+        setDesc(''); 
     }
   return (
     <div >
